@@ -1,13 +1,17 @@
+/*
+ * Example System Call
+ * @author Brandon Tarney
+ * @since 2/12/2017
+ */
+
 #include <sys/cdefs.h>
+//#include "namespace.h"
 #include <lib.h>
-#include "namespace.h"
 
 #include <string.h>
+#include <signal.h>
 
-#include <unistd.h>
-
-
-void test_test(void)
+int main()
 {
         //Test the "test" syscall which should just print
         message m;
