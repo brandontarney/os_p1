@@ -23,8 +23,9 @@ int main()
 
         printf("\nTest library system call: \n");
         //Test the syscall which should just print
-        //int isSystemCall = 1;
-        //std_doHomework1(isSystemCall);
+        int isSystemCall = 1;
+        int tmp = rand();
+        std_doHomework1(isSystemCall);
 
         printf("Test direct kernel call: \n");
         //call _kernel_call()
