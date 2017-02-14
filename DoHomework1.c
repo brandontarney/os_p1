@@ -9,10 +9,17 @@
 /*
  * Makes a system call
  */
-void do_homework1(void)
+void std_doHomework1(bool isSystemCall)
 {
-        //Test the "test" syscall which should just print a message to stdOut
-        message m;
-        memset(&m, 0, sizeof(m));
-        (void)(_syscall(PM_PROC_NR, PM_TEST, &m));
+        if (isSystemCall)
+        {
+                //Test the "test" syscall which should just print a message to stdOut
+                message m;
+                memset(&m, 0, sizeof(m));
+                (void)(_syscall(PM_PROC_NR, PM_HOMEWORK1, &m));
+        }
+        else
+        {
+                //make kernel call
+        }
 }

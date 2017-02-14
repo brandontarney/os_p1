@@ -15,22 +15,22 @@
 
 int main()
 {
-        printf("Test system call: \n");
-        //Test the "test" syscall which should just print a message to stdOut
+        printf("Test direct system call: \n");
+        //Test the syscall which should just print a message to stdOut
         message m;
         memset(&m, 0, sizeof(m));
         (void)(_syscall(PM_PROC_NR, PM_HOMEWORK1, &m));
 
-        printf("\nTest system library call: \n");
-        //Test the "test" syscall which should just print
-        //homework1();
+        printf("\nTest library system call: \n");
+        //Test the syscall which should just print
+        //std_doHomework1(true);
 
-        printf("Test kernel call: \n");
+        printf("Test direct kernel call: \n");
         //call _kernel_call()
 
-        printf("Test system library kernel call: \n");
-        //modify "test()" to take an optional boolean input flag:
-        //Either make the system call or make the kernel call 
+        printf("Test library kernel call: \n");
+        //Test the kernel call which should just print
+        //std_doHomework1(false);
 
         return(1);
 }
