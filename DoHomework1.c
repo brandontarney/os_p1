@@ -9,9 +9,9 @@
 /*
  * Makes a system call
  */
-void std_doHomework1(bool isSystemCall)
+void std_doHomework1(int isSystemCall)
 {
-        if (isSystemCall)
+        if (isSystemCall == 1)
         {
                 //Test the "test" syscall which should just print a message to stdOut
                 message m;
