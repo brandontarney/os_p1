@@ -19,14 +19,14 @@ int main()
         //Test the "test" syscall which should just print a message to stdOut
         message m;
         memset(&m, 0, sizeof(m));
-        (void)(_syscall(PM_PROC_NR, PM_TEST, &m));
+        (void)(_syscall(PM_PROC_NR, PM_HOMEWORK1, &m));
 
         printf("\nTest system library call: \n");
         //Test the "test" syscall which should just print
-        //test();
+        //homework1();
 
         printf("Test kernel call: \n");
-        //new kernel call? Not sure how to directly invoke it
+        //call _kernel_call()
 
         printf("Test system library kernel call: \n");
         //modify "test()" to take an optional boolean input flag:

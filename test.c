@@ -6,7 +6,10 @@
 
 #include <sys/types.h>
 #include <stdlib.h>
-void test(void)
+/*
+ * Makes a system call
+ */
+void do_homework1(void)
 {
         //Test the "test" syscall which should just print a message to stdOut
         message m;

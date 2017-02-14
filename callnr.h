@@ -58,7 +58,7 @@
 #define PM_GETEPINFO		(PM_BASE + 45)
 #define PM_GETPROCNR		(PM_BASE + 46)
 #define PM_GETSYSINFO		(PM_BASE + 47)
-#define PM_TEST		        (PM_BASE + 48)
+#define PM_HOMEWORK1        (PM_BASE + 48)
 
 #define NR_PM_CALLS		49	/* highest number from base plus one */
 

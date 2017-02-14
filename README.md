@@ -1,5 +1,5 @@
 # OS_P1
-Operating Systems 605.412 Project 1: modify Minix microkernel &amp; create system call 
+Operating Systems 605.412 Project 1: modify Minix microkernel &amp; create system/kernel call 
 
 ## Assignment Details:
 - Assignment: **JHU Operating Systems 605.412 Project 1**
@@ -8,11 +8,11 @@ Operating Systems 605.412 Project 1: modify Minix microkernel &amp; create syste
 - Contact: **brandon.tarney@gmail.com**
 
 ## About the Code
-1. **Included Files**: 
+1. **Included Files**: VirtualBox Minix VDI
 1. **IDE:** Eclipse
 1. **Important code:** 
 1. **How-to run:**  
 1. **Input:** 
 1. **Output:** 
-1. **Unit tests:**
+1. **Unit tests:** all tests are run using TestDoHomework.C
 1. Program was created in personal VirtualBox Minix v3.3 VM, see [the github repo for a copy](https://github.com/1amBulletproof/OS_P1)

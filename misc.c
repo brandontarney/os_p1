@@ -428,15 +428,15 @@ int do_getrusage()
 }
 
 /*===========================================================================*
- *				do_test			       	     *
- * New test system call
+ *				do_homework1			       	     *
+ * New system call
  * @author  brandon tarney
  * @since 02/11/2017
  * 
  *===========================================================================*/
-int do_test()
+int do_homework1()
 {
-    printf("test system call executed");
+    printf("Homework1 system call executed");
     //return the number of prints
 	return(1);
 }
