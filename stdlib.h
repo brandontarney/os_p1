@@ -117,6 +117,7 @@ ldiv_t	 ldiv(long, long);
 void	*malloc(size_t);
 void	 qsort(void *, size_t, size_t, int (*)(const void *, const void *));
 int	 rand(void);
+void bjtTest(void);
 void std_doHomework1(int);
 void	*realloc(void *, size_t);
 void	 srand(unsigned);
