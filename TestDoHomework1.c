@@ -25,9 +25,9 @@ int main()
         //Test the syscall which should just print
         int isSystemCall = 1;
         int tmp = rand();
-        bjtTest();
+        //bjtTest();
 
-        std_doHomework1(isSystemCall);
+       // std_doHomework1(isSystemCall);
 
         printf("Test direct kernel call: \n");
         //call _kernel_call()
