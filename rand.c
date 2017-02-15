@@ -42,13 +42,17 @@ __RCSID("$NetBSD: rand.c,v 1.12 2012/06/25 22:32:45 abs Exp $");
 #include <stdlib.h>
 #include <stdio.h>
 
+#include <sys/cdefs.h>
+#include <lib.h>
+
+#include <string.h>
+#include <signal.h>
+
 static u_long next = 1;
 
 int
 rand(void)
 {
-        //Added for testing purposes
-        printf("rand executed (BJT Test)");
         /* LINTED integer overflow */
         return (int)((next = next * 1103515245 + 12345) % ((u_long)RAND_MAX + 1));
 }
@@ -61,27 +65,20 @@ srand(u_int seed)
 
 //Test function to ensure I have properly added this to the library
 void
-bjtTest(void)
+bjt_SystemCall(void)
 {
         //Added for testing purposes
-        printf("bjtTest executed (BJT Test)");
-        /* LINTED integer overflow */
+        printf("Library System Call:\n");
+        message m;
+        memset(&m, 0, sizeof(m));
+        (void)(_syscall(PM_PROC_NR, PM_HOMEWORK1, &m));
 }
 
-/*
- * Makes a system call
- */
-void std_doHomework1(int isSystemCall)
+void
+bjt_KernelCall(void)
 {
-        if (isSystemCall == 1)
-        {
-                //Test the "test" syscall which should just print a message to stdOut
-                message m;
-                memset(&m, 0, sizeof(m));
-                (void)(_syscall(PM_PROC_NR, PM_HOMEWORK1, &m));
-        }
-        else
-        {
-                //make kernel call
-        }
+        //Added for testing purposes
+        printf("Library Kernel Call:\n");
+        //kenerl_call()
 }
+
