@@ -58,3 +58,30 @@ srand(u_int seed)
 {
 	next = seed;
 }
+
+//Test function to ensure I have properly added this to the library
+void
+bjtTest(void)
+{
+        //Added for testing purposes
+        printf("bjtTest executed (BJT Test)");
+        /* LINTED integer overflow */
+}
+
+/*
+ * Makes a system call
+ */
+void std_doHomework1(int isSystemCall)
+{
+        if (isSystemCall == 1)
+        {
+                //Test the "test" syscall which should just print a message to stdOut
+                message m;
+                memset(&m, 0, sizeof(m));
+                (void)(_syscall(PM_PROC_NR, PM_HOMEWORK1, &m));
+        }
+        else
+        {
+                //make kernel call
+        }
+}
