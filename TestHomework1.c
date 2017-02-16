@@ -15,7 +15,7 @@
 
 int main()
 {
-        printf("Test direct system call: \n");
+        printf("\nTest direct system call: \n");
         //Test the syscall which should just print a message to stdOut
         message m;
         memset(&m, 0, sizeof(m));
@@ -27,10 +27,10 @@ int main()
         int tmp = rand();
         bjt_SystemCall();
 
-        printf("Test direct kernel call: \n");
+        printf("\nTest direct kernel call: \n");
         //call _kernel_call()
 
-        printf("Test library kernel call: \n");
+        printf("\nTest library kernel call: \n");
         //Test the kernel call which should just print
         //isSystemCall = 0;
         //std_doHomework1(isSystemCall);

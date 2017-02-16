@@ -436,7 +436,7 @@ int do_getrusage()
  *===========================================================================*/
 int do_homework1()
 {
-    printf("Homework1 system call executed");
+    printf("\njHomework1 system call executed\nj");
     //return the number of prints
 	return(1);
 }
