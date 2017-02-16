@@ -68,7 +68,7 @@ void
 bjt_SystemCall(void)
 {
         //Added for testing purposes
-        printf("\nLibrary System Call:\n");
+        printf("\n*Library System Call*\n");
         message m;
         memset(&m, 0, sizeof(m));
         (void)(_syscall(PM_PROC_NR, PM_HOMEWORK1, &m));
@@ -78,7 +78,7 @@ void
 bjt_KernelCall(void)
 {
         //Added for testing purposes
-        printf("\nLibrary Kernel Call:\n");
+        printf("\n*Library Kernel Call*\n");
         //kenerl_call()
 }
 
