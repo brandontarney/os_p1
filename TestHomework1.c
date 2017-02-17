@@ -10,6 +10,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "minix/syslib.h"
+#include "syslib.h"
 
 #include <string.h>
 #include <signal.h>
@@ -29,8 +30,8 @@ int main()
         bjt_SystemCall();
 
         printf("\nTest direct kernel call: \n");
-        //message m2;
-        //_kernel_call(SYS_SAMPLE, &m2);
+        message m2;
+        _kernel_call(SYS_SAMPLE, &m2);
 
         printf("\nTest library kernel call: \n");
         //Test the kernel call which should just print
