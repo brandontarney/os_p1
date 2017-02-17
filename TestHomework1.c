@@ -9,6 +9,7 @@
 #include <lib.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include "syslib.h"
 
 #include <string.h>
 #include <signal.h>
@@ -28,13 +29,12 @@ int main()
         bjt_SystemCall();
 
         printf("\nTest direct kernel call: \n");
-        //call _kernel_call()
+        //message m2;
+        //_kernel_call(SYS_SAMPLE, &m2);
 
         printf("\nTest library kernel call: \n");
         //Test the kernel call which should just print
-        //isSystemCall = 0;
-        //std_doHomework1(isSystemCall);
-        bjt_KernelCall();
+        int result = sys_sample();
 
         return(1);
 }

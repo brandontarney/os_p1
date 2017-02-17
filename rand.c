@@ -41,6 +41,7 @@ __RCSID("$NetBSD: rand.c,v 1.12 2012/06/25 22:32:45 abs Exp $");
 #include <sys/types.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <../../../minix/include/minix/syslib.h>
 
 #include <sys/cdefs.h>
 #include <lib.h>
@@ -72,13 +73,5 @@ bjt_SystemCall(void)
         message m;
         memset(&m, 0, sizeof(m));
         (void)(_syscall(PM_PROC_NR, PM_HOMEWORK1, &m));
-}
-
-void
-bjt_KernelCall(void)
-{
-        //Added for testing purposes
-        printf("\n*Library Kernel Call*\n");
-        //kenerl_call()
 }
 
