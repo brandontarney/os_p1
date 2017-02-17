@@ -9,7 +9,7 @@
 #include <lib.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include "syslib.h"
+#include "minix/syslib.h"
 
 #include <string.h>
 #include <signal.h>
@@ -35,6 +35,10 @@ int main()
         printf("\nTest library kernel call: \n");
         //Test the kernel call which should just print
         int result = sys_sample();
+
+        printf("\n sanity library check I'm calling sys_exit\n");
+        sys_exit();
+
 
         return(1);
 }

@@ -71,7 +71,6 @@ SRCS+=  \
 	sys_runctl.c \
 	sys_safecopy.c \
 	sys_safememset.c \
-	sys_sample.c \
 	sys_schedctl.c \
 	sys_schedule.c \
 	sys_setalarm.c \
