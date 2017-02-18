@@ -1,7 +1,7 @@
-/* system library funciton to make kernel cal
-   *
+/*
+   * BJT Kernel Call Library
    * @Author Brandon Tarney
-   * @Date 02/17/2017
+   * @Date 02/18/2017
    */
 
 #include "syslib.h"
@@ -9,8 +9,6 @@
 int sys_sample(void)
 {
         message m;
-        //Added for testing purposes
-        printf("\n*Library Kernel Call*\n");
         return(_kernel_call(SYS_SAMPLE, &m));
 }
 

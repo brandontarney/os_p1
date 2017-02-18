@@ -9,6 +9,7 @@
 #include <sys/types.h>
 #include <stdlib.h>
 #include <minix/sysutil.h>
+#include "syslib.h"
 
 void
 __assert13(file, line, function, failedexpr)
@@ -32,6 +33,7 @@ __assert(file, line, failedexpr)
 	/* NOTREACHED */
 }
 
+/*
 //BJT added test code here
 int sys_sample(void)
 {
@@ -40,3 +42,4 @@ int sys_sample(void)
         printf("\n*Library Kernel Call*\n");
         return(_kernel_call(SYS_SAMPLE, &m));
 }
+*/

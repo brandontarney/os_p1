@@ -59,5 +59,6 @@ int (* const call_vec[NR_PM_CALLS])(void) = {
 	CALL(PM_GETEPINFO)	= do_getepinfo,		/* getepinfo(2) */
 	CALL(PM_GETPROCNR)	= do_getprocnr,		/* getprocnr(2) */
 	CALL(PM_GETSYSINFO)	= do_getsysinfo,		/* getsysinfo(2) */
-	CALL(PM_HOMEWORK1)	= do_homework1		/* homework1(2) */
+	CALL(PM_HOMEWORK1)	= do_homework1,		/* homework1(2) */
+	CALL(PM_HOMEWORK1KERNELCALL)	= do_homework1KernelCall		/* homework1(2) */
 };

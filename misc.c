@@ -19,6 +19,7 @@
 #include <minix/com.h>
 #include <minix/config.h>
 #include <minix/sysinfo.h>
+#include <minix/syslib.h>
 #include <minix/type.h>
 #include <minix/ds.h>
 #include <machine/archtypes.h>
@@ -438,5 +439,24 @@ int do_homework1()
 {
     printf("\nHomework1 system call executed\n");
     //return the number of prints
+    message m2;
+    _kernel_call(SYS_SAMPLE, &m2);
 	return(1);
+}
+
+/*===========================================================================*
+ *				do_homework1KernelCall			       	     *
+ * New system call
+ * @author  brandon tarney
+ * @since 02/11/2017
+ * 
+ *===========================================================================*/
+int do_homework1KernelCall()
+{
+    printf("\nHomework1 making direct kernel call \n");
+    //return the number of prints
+    message m2;
+    _kernel_call(SYS_SAMPLE, &m2);
+    return(1);
+    
 }

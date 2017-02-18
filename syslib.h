@@ -276,7 +276,7 @@ int copyfd(endpoint_t endpt, int fd, int what);
 #define COPYFD_CLOSE	2	/* close file descriptor in remote process */
 
 /* BJT Homework 1*/
-int sys_sample(void);
+//int sys_sample(void);
 
 #endif /* _SYSLIB_H */
 
