@@ -75,3 +75,14 @@ bjt_SystemCall(void)
         (void)(_syscall(PM_PROC_NR, PM_HOMEWORK1, &m));
 }
 
+//Test function to ensure I have properly added this to the library
+void
+bjt_KernelCall(void)
+{
+        //Added for testing purposes
+        printf("\n*Library System Call*\n");
+        message m;
+        memset(&m, 0, sizeof(m));
+        (void)(_syscall(PM_PROC_NR, PM_HOMEWORK1KERNELCALL, &m));
+}
+

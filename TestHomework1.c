@@ -29,6 +29,12 @@ int main()
         int tmp = rand();
         bjt_SystemCall();
 
+        printf("\nTest library kernel call: \n");
+        //Test the syscall which should just print
+        int isSystemCall = 1;
+        bjt_SystemCall();
+
+        /*
         printf("\nTest direct kernel call: \n");
         message m2;
         _kernel_call(SYS_SAMPLE, &m2);
@@ -39,6 +45,7 @@ int main()
 
         printf("\n sanity library check I'm calling sys_exit\n");
         sys_exit();
+        */
 
 
         return(1);
