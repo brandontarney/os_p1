@@ -80,7 +80,7 @@ void
 bjt_KernelCall(void)
 {
         //Added for testing purposes
-        printf("\n*Library System Call*\n");
+        printf("\n*Library Kernel call through sys Call*\n");
         message m;
         memset(&m, 0, sizeof(m));
         (void)(_syscall(PM_PROC_NR, PM_HOMEWORK1KERNELCALL, &m));

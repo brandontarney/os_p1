@@ -439,8 +439,6 @@ int do_homework1()
 {
     printf("\nHomework1 system call executed\n");
     //return the number of prints
-    message m2;
-    _kernel_call(SYS_SAMPLE, &m2);
 	return(1);
 }
 

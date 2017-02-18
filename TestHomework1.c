@@ -25,14 +25,12 @@ int main()
 
         printf("\nTest library system call: \n");
         //Test the syscall which should just print
-        int isSystemCall = 1;
         int tmp = rand();
         bjt_SystemCall();
 
         printf("\nTest library kernel call: \n");
         //Test the syscall which should just print
-        int isSystemCall = 1;
-        bjt_SystemCall();
+        bjt_KernelCall();
 
         /*
         printf("\nTest direct kernel call: \n");
