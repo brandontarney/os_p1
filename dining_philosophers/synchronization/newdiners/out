@@ -1,0 +1,125 @@
+	TAKE
+	EAT
+		WAIT
+WAIT
+				TAKE
+				EAT
+			WAIT
+	DONE
+WAIT
+		TAKE
+		EAT
+				DONE
+			WAIT
+TAKE
+EAT
+		DONE
+	WAIT
+			TAKE
+			EAT
+DONE
+				WAIT
+	WAIT
+	TAKE
+	EAT
+				WAIT
+			DONE
+		WAIT
+				TAKE
+				EAT
+	DONE
+WAIT
+		WAIT
+		TAKE
+		EAT
+WAIT
+				DONE
+			WAIT
+TAKE
+EAT
+			WAIT
+		DONE
+	WAIT
+			TAKE
+			EAT
+DONE
+				WAIT
+	WAIT
+	TAKE
+	EAT
+				WAIT
+			DONE
+		WAIT
+				TAKE
+				EAT
+	DONE
+WAIT
+		WAIT
+		TAKE
+		EAT
+WAIT
+				DONE
+			WAIT
+TAKE
+EAT
+			WAIT
+DONE
+				WAIT
+	WAIT
+		DONE
+	WAIT
+			TAKE
+			EAT
+	TAKE
+	EAT
+				WAIT
+			DONE
+		WAIT
+				TAKE
+				EAT
+	DONE
+WAIT
+		WAIT
+WAIT
+		TAKE
+		EAT
+				DONE
+			WAIT
+TAKE
+EAT
+			WAIT
+		DONE
+	WAIT
+			TAKE
+			EAT
+DONE
+				WAIT
+	WAIT
+	TAKE
+	EAT
+				WAIT
+			DONE
+		WAIT
+				TAKE
+				EAT
+	DONE
+WAIT
+		WAIT
+		TAKE
+		EAT
+WAIT
+				DONE
+			WAIT
+TAKE
+EAT
+			WAIT
+		DONE
+	WAIT
+			TAKE
+		DONE
+	EAT
+				WAIT
+	WAIT
+			DONE
+		WAIT
+				WAIT
