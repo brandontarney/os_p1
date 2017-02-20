@@ -26,7 +26,6 @@
  * to avoid any race conditions in the sem_create() and sem_close()
  * functions.
  */
-
 #include	<sys/types.h>
 #include	<sys/ipc.h>
 #include	<sys/sem.h>
@@ -80,7 +79,6 @@ static struct sembuf	op_op[1] = {
 			/* the 99 is set to the actual amount to add
 			   or subtract (positive or negative) */
 };
-
 /********************************************************************
  * Create a semaphore with a specified initial value.
  * If the semaphore alread exists, we don't initialize it (of course).
@@ -98,14 +96,20 @@ sem_create (key_t key, int initval)
 	} semctl_arg;
 
 	if (key == IPC_PRIVATE)
+    {
 		return (-1);	/* not intended for private semaphores */
+    }
 
 	else if (key == (key_t) -1)
+    {
 		return (-1);	/* probably an ftok () error by caller */
+    }
 
 again:
 	if ( (id = semget (key, 3, 0666 | IPC_CREAT)) < 0)
+    {
 		return (-1);	/* permission problem or tables full */
+    }
 
 	/*
 	 * When the semaphore is created, we know that the value of all
@@ -125,7 +129,7 @@ again:
 	if (semop (id, &op_lock[0], 2) < 0) {
 		if (errno == EINVAL)
 			goto again;
-		err_sys ("can't lock");
+		err_sys ("can't lock\n");
 	}
 
 	/*
@@ -134,7 +138,7 @@ again:
 	 */
 
 	if ( (semval = semctl (id, 1, GETVAL, 0)) < 0)
-		err_sys ("can't GETVAL");
+		err_sys ("can't GETVAL\n");
 
 	if (semval == 0)
 	{	/* We could initialize by doibng a SETALL, but that
@@ -145,11 +149,11 @@ again:
 
 		semctl_arg.val = initval;
 		if (semctl (id, 0, SETVAL, semctl_arg) < 0)
-			err_sys ("can't SETVAL[0]");
+			err_sys ("can't SETVAL[0]\n");
 
 		semctl_arg.val = BIGCOUNT;
 		if (semctl (id, 1, SETVAL, semctl_arg) < 0)
-			err_sys ("can't SETVAL[1]");
+			err_sys ("can't SETVAL[1]\n");
 	}
 
 	/*
@@ -157,11 +161,13 @@ again:
 	 */
 
 	if (semop (id, &op_endcreate[0], 2) < 0)
-		err_sys ("can't end create");
+		err_sys ("can't end create\n");
+
+    printf("Semaphore key %d ID = %d \n", (int) key, id);
 
 	return (id);
 }
-
+
 /********************************************************************
  * Open a semaphore that must already exist.
  * This function should be used, instead of sem_create(), if the caller
@@ -191,7 +197,7 @@ sem_open (key_t key)
 	 */
 	
 	if (semop (id, &op_open[0], 1) < 0)
-		err_sys ("can't open");
+		err_sys ("can't open\n");
 
 	return (id);
 }
@@ -208,9 +214,8 @@ void
 sem_rm (int id)
 {
 	if (semctl (id, 0, IPC_RMID, 0) < 0)
-		err_sys ("can't IPC_RMID");
+		err_sys ("can't IPC_RMID\n");
 }
-
 /********************************************************************
  * Close a semaphore.
  * Unlike the remove function above, this function is for a process
@@ -230,7 +235,7 @@ sem_close (int id)
 	 */
 
 	if (semop (id, &op_close[0], 3) < 0)
-		err_sys ("can't semop");
+		err_sys ("can't semop\n");
 	
 	/*
 	 * Now that we have a lock, read the value of the process
@@ -241,17 +246,16 @@ sem_close (int id)
 	 */
 
 	if ( (semval = semctl (id, 1, GETVAL, 0)) < 0)
-		err_sys ("can't GETVAL");
+		err_sys ("can't GETVAL\n");
 	
 	if (semval > BIGCOUNT)
-		err_dump ("sem[1] > BIGCOUNT");
+		err_dump ("sem[1] > BIGCOUNT\n");
 	else if (semval == BIGCOUNT)
 		sem_rm(id);
 	else
 		if (semop (id, &op_unlock[0], 1) < 0)
-			err_sys ("can't unlock");	/* unlock */
+			err_sys ("can't unlock\n");	/* unlock */
 }
-
 /********************************************************************
  * Wait until a semaphore's value is greater than 1, then decrement
  * it by 1 and return.
@@ -284,10 +288,10 @@ void
 sem_op (int id, int value)
 {
 	if ( (op_op[0].sem_op = value) == 0)
-		err_sys ("can't have value == 0");
+		err_sys ("can't have value == 0\n");
 
 	if (semop (id, &op_op[0], 1) < 0)
-		err_sys ("sem_op error");
+		err_sys ("sem_op error\n");
 }
 
 void err_sys (char *msg)

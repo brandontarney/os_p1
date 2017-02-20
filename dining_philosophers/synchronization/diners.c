@@ -35,6 +35,7 @@ void *philosopher (void *in)
 {
 	int i = *(int *)in;
 	int awhile = 5;
+    printf("Philosopher %d is starting\n", i);
 
 	while (awhile--)
 	{
@@ -43,6 +44,7 @@ void *philosopher (void *in)
 		eat(i);
 		put_forks (i);
 	}
+    printf("Philosopher %d is DONE\n", i);
 }
 
 void
@@ -86,7 +88,7 @@ void think (int i)
 
 void eat (int i)
 {
-	printf ("Philosopher %d eating (%d, %d)\n", i, state[LEFT], state[RIGHT]);
+	printf ("Philosopher %d eating (left state: %d, right state: %d)\n", i, state[LEFT], state[RIGHT]);
 	sleep (1);
 	printf ("Philosopher %d done eating\n", i);
 }
