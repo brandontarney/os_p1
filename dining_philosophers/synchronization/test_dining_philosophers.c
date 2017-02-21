@@ -17,11 +17,11 @@
 int main(int argc, char *argv[])
 {
     mutex = sem_create(1, 1);
-    s[0] = sem_create(2,1);
-    s[1] = sem_create(3,1);
-    s[2] = sem_create(4,1);
-    s[3] = sem_create(5,1);
-    s[4] = sem_create(6,1);
+    s[0] = sem_create(2,0);
+    s[1] = sem_create(3,0);
+    s[2] = sem_create(4,0);
+    s[3] = sem_create(5,0);
+    s[4] = sem_create(6,0);
     printf("Mutex id = %d \n", mutex);
     if (mutex == -1) 
     {
